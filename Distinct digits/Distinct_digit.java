@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
+ * git test
  * Created by kaorihirata on 2017-04-14.
  */
 public class Distinct_digit {
