@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by madoka on 2017/04/19.
  */
-public class MyPage {
+public class MyPage extends DispPageClass {
     //check mail adress char
     public static final String MATCH_MAIL =
             "([a-zA-Z0-9][a-zA-Z0-9_.+\\-]*)@(([a-zA-Z0-9][a-zA-Z0-9_\\-]+\\.)+[a-zA-Z]{2,6})";
@@ -13,6 +13,7 @@ public class MyPage {
     public String dispPage() {
         System.out.println("This is My Page");
         System.out.println("press View profile(0) or Edit profile(1)");
+        System.out.println("menu(99)");
         Scanner tabMenu = new Scanner(System.in);
         int num = tabMenu.nextInt();
 
@@ -36,7 +37,7 @@ public class MyPage {
                         //Over ride to UserContorolClass
                         name.setName = (newName);
                         return newName;
-                        break;
+                    break;
                     case 1://Edit E-mail
                         System.out.println("Input New E-mail");
                         Scanner email = new Scanner(System.in);
@@ -58,7 +59,7 @@ public class MyPage {
                         //Over ride to UserContorolClass
                         category.setCategory = (newCategory);
                         return newCategory;
-                        break;
+                    break;
                     case 3://Edit Password
                         System.out.println("Input New Password");
                         Scanner pass = new Scanner(System.in);
@@ -66,10 +67,15 @@ public class MyPage {
                         //Over ride to UserContorolClass
                         password.setPass = (newPass);
                         return newPass;
-                        break;
+                    break;
                     default:
                         System.out.println("error");
                 }
+                break;
+
+            case 99://call menu
+                public void callMenu () {
+            }
 
             default:
                 System.out.println("error");
