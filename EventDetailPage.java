@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EventDetailPage extends EventControlClass{
 
     public void dispPage(){
-        System.out.println("this is ventDetailPage");
+        System.out.println("this is EventDetailPage");
     }
     // EventControlerClassからデータ取得
     public void getEventControler(){
