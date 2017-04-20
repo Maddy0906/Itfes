@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Created by madoka on 2017/04/19.
+ * Created by madoka on 2017/04/19　これ.
  */
 public class CalendarPage extends DispPageClass {
 
