@@ -18,10 +18,13 @@ public class UserControlClass {
         return true;
     }
 
-    public String[] getUserEvents(){
-        // DB
-        String[] hoge = new String[1];
-        return hoge;
+    public String[][] getUserEvents(){
+        /** It'll change to DB **/
+        String[][] userEvents;
+        testTools tt = new testTools();
+        userEvents = tt.makeTestData(2);
+        return userEvents;
+
     }
 
     public void setUserEvent(String eventTitle){
