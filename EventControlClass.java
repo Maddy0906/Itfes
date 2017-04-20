@@ -19,16 +19,6 @@ public class EventControlClass {
         /** It'll change to DB **/
         String[][] reccomendEventsArray;
         reccomendEventsArray = tt.makeTestData(1);
-
-    public String[] getUpcommingEvents(){
-        // It'll change to DB
-        String[] upCommingEventsArray = new String[1];
-        return upCommingEventsArray;
-    }
-
-    public String[] getRecommendEvents(){
-        // It'll change to DB
-        String[] reccomendEventsArray = new String[1];
         return reccomendEventsArray;
     }
 

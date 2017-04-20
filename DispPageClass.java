@@ -26,13 +26,6 @@ abstract class DispPageClass {
             case 2:
                 break;
             case 3:
-            case 0://Jump to Mypage
-                break;
-            case 1://Jump to CalendarPage
-                break;
-            case 2://Jump to PostEventPage
-                break;
-            case 3://Jump to MainPage
                 break;
             default:
                 System.out.println("error");

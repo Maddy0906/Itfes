@@ -25,6 +25,8 @@ public class UserControlClass {
         userEvents = tt.makeTestData(2);
         return userEvents;
 
+    }
+
     public void setUserEvent(String eventTitle){
         // DB
     }
