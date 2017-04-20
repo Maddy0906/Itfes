@@ -5,30 +5,33 @@ import java.util.Scanner;
 /**
  * Created by kaorihirata on 2017-04-19.
  */
-public class LoginAndRegisterPage implements Vlidate {
-    public void vlidate(){};
+public class LoginAndRegisterPage implements Validate {
+    @Override
+    public void validate() {
+
+    }
 
     public void dispPage(){
         System.out.println("this is LoginAndRegisterPage");
         System.out.println("Choose and Enter sign up(0)/ sign in(1) / linkedIn(2)");
 
-        Scanner Scan = new Scanner(System.in);
-        int login = Scan.nextInt();
+        Scanner scan = new Scanner(System.in);
+        int login = scan.nextInt();
 
         switch (login) {
             case 0: // (0) sign up
                 System.out.println("put name");
-                String name = scan.nextLine();
+                String liName = scan.nextLine();
                 System.out.println("put Email");
-                String email = scan.nextLine();
+                String liEmail = scan.nextLine();
                 System.out.println("put password");
-                String password = scan.nextLine();
+                String liPassword = scan.nextLine();
                 System.out.println("put category");
-                String category = scan.nextLine();
+                String liCategory = scan.nextLine();
 
                 // UserControlClassのnewRegister()を使う
                 UserControlClass ucc = new UserControlClass();
-                boolean uccResult = ucc.newRegister(name, email, password,category);
+                boolean uccResult = ucc.newRegister(liName, liEmail,liPassword,liCategory);
                 if (uccResult) {
                     System.out.println("Create account successful");
                 } else {
@@ -37,13 +40,13 @@ public class LoginAndRegisterPage implements Vlidate {
 
             case 1: // (1) sign in
                 System.out.println("put Email");
-                String email = scan.nextLine();
+                String siEmail = scan.nextLine();
                 System.out.println("put password");
-                String password = scan.nextLine();
+                String siPassword = scan.nextLine();
 
                 // UserControlClassのloginBoolean()を使う
                 UserControlClass userCheck = new UserControlClass();
-                boolean userCheckResult = userCheck.loginBoolean(email);
+                boolean userCheckResult = userCheck.loginBoolean(siEmail,siPassword);
                 if (userCheckResult) {
                     System.out.println("Log in successful");
                 } else {
