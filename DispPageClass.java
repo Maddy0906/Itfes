@@ -17,13 +17,13 @@ abstract class DispPageClass {
         int chPage = pg.nextInt();
 
         switch (chPage) {
-            case 0:
+            case 0://Jump to Mypage
                 break;
-            case 1:
+            case 1://Jump to CalendarPage
                 break;
-            case 2:
+            case 2://Jump to PostEventPage
                 break;
-            case 3:
+            case 3://Jump to MainPage
                 break;
             default:
                 System.out.println("error");
