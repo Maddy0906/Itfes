@@ -7,27 +7,11 @@ import java.util.Scanner;
  */
 public class LoginAndRegisterPage extends DispPageClass implements Validate {
     @Override
-    public boolean validate(String liEmail,String lipassword) {
-
-        //check mail address
-        String MATCH_MAIL = "([a-zA-Z0-9][a-zA-Z0-9_.+\\-]*)@(([a-zA-Z0-9][a-zA-Z0-9_\\-]+\\.)+[a-zA-Z]{2,6})";
-
-        if (!liEmail.matches(MATCH_MAIL)) {
-            System.out.println("Email Address in invalid format");
-            return false;
-        }
-
-        //check pasword
-        if (lipassword.length()< 4){
-            System.out.println("Password is short!!");
-            return false;
-        }
-
-        return true;
+    public void validate() {
 
     }
 
-    public void dispPage() {
+    public void dispPage(){
         Scanner scan = new Scanner(System.in);
         UserControlClass ucc = new UserControlClass();
 
@@ -47,12 +31,10 @@ public class LoginAndRegisterPage extends DispPageClass implements Validate {
                 System.out.println("put category");
                 String liCategory = scan.nextLine();
 
-                this.validate(liEmail,liPassword);
-
-                boolean uccResult = ucc.newRegister(liName, liEmail, liPassword, liCategory);
+                boolean uccResult = ucc.newRegister(liName, liEmail,liPassword,liCategory);
                 if (uccResult) System.out.println("Create account successful");
                 else {
-                    System.out.println(liName + " already exists");
+                    System.out.println(liName +" already exists");
                     return;
                 }
 
@@ -63,7 +45,7 @@ public class LoginAndRegisterPage extends DispPageClass implements Validate {
                 System.out.println("put password");
                 String siPassword = scan.nextLine();
 
-                boolean userCheckResult = ucc.login(siEmail, siPassword);
+                boolean userCheckResult = ucc.login(siEmail,siPassword);
                 if (userCheckResult) System.out.println("Log in successful");
                 else {
                     System.out.println("Log in fail");

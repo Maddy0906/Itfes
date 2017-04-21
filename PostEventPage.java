@@ -17,23 +17,23 @@ public class PostEventPage implements Validate {
 
         Scanner scan = new Scanner(System.in);
         int chPage = scan.nextInt();
+        scan.nextLine();
         switch (chPage) {
             case 0:
                 System.out.println("Enter EventName");
-                int EventName = scan.nextInt();
+                String EventName = scan.nextLine();
                 System.out.println("Enter Location");
-                int Location = scan.nextInt();
-                System.out.println("Enter Date");
-                int Date = scan.nextInt();
+                String Location = scan.nextLine();
+                System.out.println("Enter Date EX)May 5 Mon");
+                String Date = scan.nextLine();
                 System.out.println("Enter Time");
-                int Time = scan.nextInt();
+                String Time = scan.nextLine();
                 System.out.println("Enter Description");
-                int Description = scan.nextInt();
+                String Description = scan.nextLine();
 
-                // EventControlClassのpostEvent()を使う
-                EventControlClass postEvent = new EventControlClass();
-                boolean posEveResult = postEvent.postEvent(EventName,Location,Date,Time,Description);
-               if (posEveResult) {
+                EventControlClass ecc = new EventControlClass();
+                boolean posEveResult = ecc.postEvent(EventName,Location,Date,Time,Description);
+                if (posEveResult) {
                     System.out.println("Event saved");
                 } else {
                     break;
