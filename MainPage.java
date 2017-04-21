@@ -28,7 +28,8 @@ public class MainPage extends DispPageClass {
 
                 if(gotoDetail == 0){
                     // go to detail page
-                    EventDetailPage edp = new EventDetailPage();
+                    System.out.println("[DebugMode] Enter EventID ");
+                    EventDetailPage edp = new EventDetailPage(scan.nextInt());
                     edp.dispPage();
                 }else{
                     this.dispPage();
@@ -43,7 +44,8 @@ public class MainPage extends DispPageClass {
 
                 if(gotoDetail == 0){
                     // go to detail page
-                    EventDetailPage edp = new EventDetailPage();
+                    System.out.println("[DebugMode] Enter EventID ");
+                    EventDetailPage edp = new EventDetailPage(scan.nextInt());
                     edp.dispPage();
                 }else{
                     this.dispPage();

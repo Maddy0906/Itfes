@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class EventDetailPage extends DispPageClass {
 
+    private int eventID;
+
+    public EventDetailPage(int eventID){
+        this.eventID = eventID;
+    }
+
     public void dispPage(){
         EventControlClass ecc = new EventControlClass();
 
@@ -16,7 +22,7 @@ public class EventDetailPage extends DispPageClass {
         switch (num) {
             case 0: // (0)show EventDetail
                 // EventControlClassからデータ取得
-                System.out.println(Arrays.asList(ecc.getEventDetail(1)));
+                System.out.println(Arrays.asList(ecc.getEventDetail(this.eventID)));
 
                 this.chJoin();
 
@@ -33,9 +39,10 @@ public class EventDetailPage extends DispPageClass {
         Scanner scan = new Scanner(System.in);
         int chJoin = scan.nextInt();
         if (chJoin == 0){
-            //UserControlClassのsetEvent()を使う
+
             UserControlClass ucc = new UserControlClass();
-            boolean eventJoin = ucc.setUserEvent(1);
+            System.out.println("Enter EventID you want to join");
+            boolean eventJoin = ucc.setUserEvent(scan.nextInt());
             if (eventJoin){
                 System.out.println("joint successful");
             }else{
@@ -44,5 +51,6 @@ public class EventDetailPage extends DispPageClass {
         }else{
             // chJoin = 1  (何もしない)
         }
+        this.dispPage();
     }
 }
