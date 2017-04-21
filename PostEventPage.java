@@ -7,8 +7,8 @@ import java.util.Scanner;
  */
 public class PostEventPage implements Validate {
     @Override
-    public void validate() {
-
+    public boolean validate(String email, String password) {
+        return false;
     }
 
     public void dispPage(){
