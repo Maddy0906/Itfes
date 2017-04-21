@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by kaorihirata on 2017-04-19.
  */
-public class LoginAndRegisterPage implements Validate {
+public class LoginAndRegisterPage extends DispPageClass implements Validate {
     @Override
     public void validate() {
 

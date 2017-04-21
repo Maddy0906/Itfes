@@ -26,6 +26,8 @@ abstract class DispPageClass {
             case 2:
                 break;
             case 3:
+                MainPage mp = new MainPage();
+                mp.dispPage();
                 break;
             default:
                 System.out.println("error");

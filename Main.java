@@ -6,5 +6,9 @@ public class Main {
         // Login and register page
         LoginAndRegisterPage larp = new LoginAndRegisterPage();
         larp.dispPage();
+
+        // MainPage
+        MainPage mp = new MainPage();
+        mp.dispPage();
     }
 }
