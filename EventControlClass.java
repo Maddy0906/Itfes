@@ -20,14 +20,21 @@ public class EventControlClass {
         return recommendEventsArray;
     }
 
-    public String[] getEventDetail(int EventID){
+    public String[] getEventDetail(int event_type, int eventID){
         // It'll change to DB
-        String[] eventDetail = new String[6];
 
-        //Search event detail
-        String[][] eventList = this.makeTestData(0);
+        /**
+         * event_type: 0 = upcoming, 1 = you may like
+         */
+
+        String[] eventDetail = new String[6];
+        String[][] eventList; // サンプルのイベントリストを入れる
+
+        if(event_type == 0)  eventList = this.makeTestData(0); // upcoming event
+        else eventList = this.makeTestData(1); // recommend event
+
         for(int i=0;i<eventList.length;i++){
-            if(EventID == Integer.parseInt(eventList[i][0])){
+            if(eventID == Integer.parseInt(eventList[i][0])){
                 for(int j=0; j<eventDetail.length;j++){
                     eventDetail[j] = eventList[i][j];
                 }
@@ -112,20 +119,23 @@ public class EventControlClass {
                 testDataArray[0][3] = "10:00 - 12:00";
                 testDataArray[0][4] = "Vancouver BC";
                 testDataArray[0][5] = "java Code";
+                testDataArray[0][6] = "Welcome Coders for Free technical study !!";
 
-                testDataArray[0][0] = "100";
+                testDataArray[1][0] = "100";
                 testDataArray[1][1] = "Jan";
                 testDataArray[1][2] = "15";
                 testDataArray[1][3] = "15:00 - 16:00";
                 testDataArray[1][4] = "Prince Rupert BC";
                 testDataArray[1][5] = "web Code";
+                testDataArray[1][6] = "Welcome Coders for Hack events !!";
 
-                testDataArray[0][0] = "200";
+                testDataArray[2][0] = "200";
                 testDataArray[2][1] = "Sep";
                 testDataArray[2][2] = "10";
                 testDataArray[2][3] = "21:00 - 22:00";
                 testDataArray[2][4] = "Nelson BC";
                 testDataArray[2][5] = "Coffee Code";
+                testDataArray[2][6] = "Let's gotcha a Pika-chu";
                 break;
             case 2: // userEvents
                 testDataArray[0][0] = "1000";

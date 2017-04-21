@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class EventDetailPage extends DispPageClass {
 
-    private int eventID;
+    private int event_type, eventID;
 
-    public EventDetailPage(int eventID){
+    public EventDetailPage(int event_type, int eventID){
+        this.event_type = event_type;
         this.eventID = eventID;
     }
 
@@ -21,8 +22,7 @@ public class EventDetailPage extends DispPageClass {
 
         switch (num) {
             case 0: // (0)show EventDetail
-                // EventControlClassからデータ取得
-                System.out.println(Arrays.asList(ecc.getEventDetail(this.eventID)));
+                System.out.println(Arrays.asList(ecc.getEventDetail(event_type, this.eventID)));
 
                 this.chJoin();
                 break;
