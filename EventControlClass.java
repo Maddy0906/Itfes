@@ -17,14 +17,15 @@ public class EventControlClass {
 
     public String[][] getRecommendEvents(){
         /** It'll change to DB **/
-        String[][] reccomendEventsArray;
-        reccomendEventsArray = tt.makeTestData(1);
-        return reccomendEventsArray;
+        String[][] recommendEventsArray;
+        recommendEventsArray = tt.makeTestData(1);
+        return recommendEventsArray;
     }
 
     public String[] getEventDetail(int EventID){
         // It'll change to DB
         String[] eventDetail = new String[1];
+        eventDetail[0] = "Detail!!!";
         return eventDetail;
     }
 

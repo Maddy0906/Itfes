@@ -10,6 +10,8 @@ public class CalendarPage extends DispPageClass {
 
     public void dispPage() {
 
+        Scanner scan = new Scanner(System.in);
+
         EventControlClass ecc = new EventControlClass();
         UserControlClass ucc = new UserControlClass();
 
@@ -36,7 +38,14 @@ public class CalendarPage extends DispPageClass {
                 break;
             default:
                 System.out.println("error");
+        }
 
+        System.out.println("Do you want to finish app? Yes(0)/No(1)");
+        int finishFlg = scan.nextInt();
+        if(finishFlg == 0) return;
+        else{
+            CalendarPage cp = new CalendarPage();
+            cp.dispPage();
         }
     }
 }

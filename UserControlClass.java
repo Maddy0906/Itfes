@@ -70,8 +70,9 @@ public class UserControlClass {
 
     }
 
-    public void setUserEvent(String eventTitle){
+    public boolean setUserEvent(int eventID){
         // DB
+        return true;
     }
 
     public String[][] getUserSampleData(){
