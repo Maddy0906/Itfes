@@ -15,7 +15,7 @@ public class EventDetailPage extends DispPageClass {
         EventControlClass ecc = new EventControlClass();
 
         System.out.println("this is EventDetailPage");
-        System.out.println("Choose one of this EventDetail(0)/menu(99)");
+        System.out.println("Choose one of this EventDetail(0) / back to Main page(1) / menu(99)");
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
 
@@ -25,7 +25,11 @@ public class EventDetailPage extends DispPageClass {
                 System.out.println(Arrays.asList(ecc.getEventDetail(this.eventID)));
 
                 this.chJoin();
-
+                break;
+            case 1:
+                MainPage mp = new MainPage();
+                mp.dispPage();
+                break;
             case 99://Call Menu
                 this.callMenu();
                 break;
