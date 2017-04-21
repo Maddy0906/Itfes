@@ -22,7 +22,7 @@ public class MyPage extends DispPageClass {
         switch (num) {
             case 0: //Display User data(name,E-mail,category,password)
                 //Display User information
-                System.out.println(Arrays.asList(ucc.getUserAccountInformation()));
+                System.out.println(Arrays.asList(ucc.getUserAccount()));
                 break;
 
             case 1: //UserDate RenewAccount()
@@ -39,7 +39,6 @@ public class MyPage extends DispPageClass {
                 if (result) {
                     // success
                     System.out.println("Renew account successful");
-                    //Jump to MainPage
                 } else {
                     // fail
                     System.out.println("error");
