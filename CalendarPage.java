@@ -25,7 +25,6 @@ public class CalendarPage extends DispPageClass {
 
         switch (num) {
             case 0: //Display All Event
-                //Call EventControlClass
                 //Display event information
                 System.out.println(Arrays.deepToString(ecc.getUpcomingEvents()));
                 break;
