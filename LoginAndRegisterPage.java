@@ -6,26 +6,6 @@ import java.util.Scanner;
  * Created by kaorihirata on 2017-04-19.
  */
 public class LoginAndRegisterPage extends DispPageClass implements Validate {
-    @Override
-    public boolean validate(String liEmail,String lipassword) {
-
-        //check mail address
-        String MATCH_MAIL = "([a-zA-Z0-9][a-zA-Z0-9_.+\\-]*)@(([a-zA-Z0-9][a-zA-Z0-9_\\-]+\\.)+[a-zA-Z]{2,6})";
-
-        if (!liEmail.matches(MATCH_MAIL)) {
-            System.out.println("Email Address in invalid format");
-            return false;
-        }
-
-        //check password
-        if (lipassword.length()< 4){
-            System.out.println("Password is short!!");
-            return false;
-        }
-
-        return true;
-
-    }
 
     public void dispPage(){
         Scanner scan = new Scanner(System.in);
@@ -75,6 +55,32 @@ public class LoginAndRegisterPage extends DispPageClass implements Validate {
             default:
                 System.out.println("Error LoginAndRegisterPage");
         }
+    }
+
+    @Override
+    public boolean validate(String liEmail,String lipassword) {
+
+        //check mail address
+        String MATCH_MAIL = "([a-zA-Z0-9][a-zA-Z0-9_.+\\-]*)@(([a-zA-Z0-9][a-zA-Z0-9_\\-]+\\.)+[a-zA-Z]{2,6})";
+
+        if (!liEmail.matches(MATCH_MAIL)) {
+            System.out.println("Email Address in invalid format");
+            return false;
+        }
+
+        //check password
+        if (lipassword.length()< 4){
+            System.out.println("Password is short!!");
+            return false;
+        }
+
+        return true;
+
+    }
+
+    @Override
+    public boolean validate(String eventName, String location, String date, String time, String description) {
+        return false;
     }
 }
 
