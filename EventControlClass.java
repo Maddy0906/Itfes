@@ -58,9 +58,9 @@ public class EventControlClass {
 
 
     public String[][] makeTestData(int testDataType){
-        String[][] testDataArray = new String[5][6];
+        String[][] testDataArray = new String[5][7];
         /**
-         * 曜日、日付、時間、場所、イベント名、詳細
+         * EventID、曜日、日付、時間、場所、イベント名、詳細
          */
         switch (testDataType) {
             case 0: // upcoming events

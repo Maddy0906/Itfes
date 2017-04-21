@@ -23,7 +23,7 @@ public class MainPage extends DispPageClass {
             case 0: //Display upComing Event
                 //Display event information
                 System.out.println(Arrays.deepToString(ecc.getUpcomingEvents()));
-                System.out.println("Go to event detail page(0) / No(1)");
+                System.out.println("\nGo to event detail page(0) / No(1)");
                 gotoDetail = scan.nextInt();
 
                 if(gotoDetail == 0){
@@ -39,7 +39,7 @@ public class MainPage extends DispPageClass {
             case 1: //Display You May Like Event
                 //Display event information
                 System.out.println(ecc.getRecommendEvents());
-                System.out.println("Go to event detail page(0) / No(1)");
+                System.out.println("\nGo to event detail page(0) / No(1)");
                 gotoDetail = scan.nextInt();
 
                 if(gotoDetail == 0){

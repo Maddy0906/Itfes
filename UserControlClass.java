@@ -5,6 +5,8 @@ package Itfes;
  */
 public class UserControlClass {
 
+    private EventControlClass ecc = new EventControlClass();
+
     public boolean newRegister(String name, String eMail,String password, String category){
         /** It'll change to DB **/
         String[][] userSampleData = this.getUserSampleData();
@@ -42,25 +44,13 @@ public class UserControlClass {
 
     }
 
-    public String[][] getUserEvents(){
-        /** It'll change to DB **/
-        String[][] userEvents;
-        EventControlClass ecc = new EventControlClass();
-        userEvents = ecc.makeTestData(2);
-        return userEvents;
-    }
-
-//    public boolean setUserEvent(int eventID){
-//        return this.setUserEvent(eventID);
+//    public String[][] getUserEvents(){
+//        /** It'll change to DB **/
+//        String[][] userEvents;
+//
+//        userEvents = ecc.makeTestData(2);
+//        return userEvents;
 //    }
-
-//    public String[] getUserAccountInformation(){
-//        return this.getUserAccount();
-//    }
-
-
-
-
 
     /**
      * -------------------------------------------------------------
@@ -126,6 +116,26 @@ public class UserControlClass {
             count++;
             return true;
         }
+    }
+
+    public String[][] getUserEvent(){
+        String[][] upcomingEventArray = this.ecc.makeTestData(0);
+        String[][] resultUserEventList = new String[5][7];
+        for(int i=0;i<userEventlist.length;i++){
+            for(int j=0;j<upcomingEventArray.length;j++){
+                if(userEventlist[i] == Integer.parseInt(upcomingEventArray[j][0])){
+                    resultUserEventList[j][0] = upcomingEventArray[j][0];
+                    resultUserEventList[j][1] = upcomingEventArray[j][1];
+                    resultUserEventList[j][2] = upcomingEventArray[j][2];
+                    resultUserEventList[j][3] = upcomingEventArray[j][3];
+                    resultUserEventList[j][4] = upcomingEventArray[j][4];
+                    resultUserEventList[j][5] = upcomingEventArray[j][5];
+                    resultUserEventList[j][6] = upcomingEventArray[j][6];
+                }
+            }
+        }
+        return resultUserEventList;
+
     }
 
 }

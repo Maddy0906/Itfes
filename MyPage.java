@@ -18,11 +18,23 @@ public class MyPage extends DispPageClass {
 
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
+        scan.nextLine();
 
         switch (num) {
             case 0: //Display User data(name,E-mail,category,password)
                 //Display User information
                 System.out.println(Arrays.asList(ucc.getUserAccount()));
+                System.out.println("---Your Event list---");
+                String[][] userEvents = ucc.getUserEvent();
+                if(userEvents[0][0] == null){
+                    System.out.println("Nothing to join your events");
+                } else {
+                    for(int i=0;i<userEvents.length;i++){
+                        if(userEvents[i][0] == null) continue;
+                        System.out.println(Arrays.deepToString(userEvents));
+                    }
+                }
+                this.dispPage();
                 break;
 
             case 1: //UserDate RenewAccount()
@@ -43,8 +55,7 @@ public class MyPage extends DispPageClass {
                     // fail
                     System.out.println("error");
                 }
-                MyPage mp = new MyPage();
-                mp.dispPage();
+                this.dispPage();
                 break;
 
             case 99://call menu

@@ -30,7 +30,7 @@ public class CalendarPage extends DispPageClass {
                 break;
             case 1: //Display User's Event
                 //Display event information
-                System.out.println(Arrays.deepToString(ucc.getUserEvents()));
+                System.out.println(Arrays.deepToString(ucc.getUserEvent()));
                 break;
             case 99://Call Menu
                 this.callMenu();
