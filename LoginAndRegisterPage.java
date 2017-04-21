@@ -35,7 +35,7 @@ public class LoginAndRegisterPage extends DispPageClass implements Validate {
                 if (uccResult) System.out.println("Create account successful");
                 else {
                     System.out.println(liName +" already exists");
-                    return;
+                    this.dispPage();
                 }
 
                 break;
@@ -49,11 +49,15 @@ public class LoginAndRegisterPage extends DispPageClass implements Validate {
                 if (userCheckResult) System.out.println("Log in successful");
                 else {
                     System.out.println("Log in fail");
-                    return;
+                    this.dispPage();
                 }
 
             case 2: // (2) LinkedIn
+                ucc.newRegister("LinkedIn", "LinkedIn","LinkedIn","LinkedIn");
                 System.out.println("Login with LinkedIn");
+                break;
+            default:
+                System.out.println("Error LoginAndRegisterPage");
         }
     }
 }
