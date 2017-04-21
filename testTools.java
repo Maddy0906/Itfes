@@ -46,7 +46,7 @@ public class testTools {
                 testDataArray[0][1] = "24";
                 testDataArray[0][2] = "10:00 - 12:00";
                 testDataArray[0][3] = "Vancouver BC";
-                testDataArray[0][3] = "java Code";
+                testDataArray[0][4] = "java Code";
 
                 testDataArray[1][0] = "Jan";
                 testDataArray[1][1] = "15";
@@ -65,7 +65,7 @@ public class testTools {
                 testDataArray[0][1] = "24";
                 testDataArray[0][2] = "10:00 - 12:00";
                 testDataArray[0][3] = "Vancouver BC";
-                testDataArray[0][3] = "java Code";
+                testDataArray[0][4] = "java Code";
 
                 testDataArray[1][0] = "Jan";
                 testDataArray[1][1] = "15";
