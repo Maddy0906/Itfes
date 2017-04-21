@@ -24,10 +24,6 @@ public class UserControlClass {
         return true;
     }
 
-    public void rewardAccount(){
-
-    }
-
     public boolean login(String eMail,String password){
 
         String[][] userSampleData = this.getUserSampleData();
@@ -43,14 +39,6 @@ public class UserControlClass {
         return false;
 
     }
-
-//    public String[][] getUserEvents(){
-//        /** It'll change to DB **/
-//        String[][] userEvents;
-//
-//        userEvents = ecc.makeTestData(2);
-//        return userEvents;
-//    }
 
     /**
      * -------------------------------------------------------------
@@ -118,9 +106,15 @@ public class UserControlClass {
         }
     }
 
+    /**
+     * This function will have to change into DB process
+     * Terrible code
+     */
     public String[][] getUserEvent(){
         String[][] upcomingEventArray = this.ecc.makeTestData(0);
+        String[][] recommendEventArray = this.ecc.makeTestData(1);
         String[][] resultUserEventList = new String[5][7];
+
         for(int i=0;i<userEventlist.length;i++){
             for(int j=0;j<upcomingEventArray.length;j++){
                 if(userEventlist[i] == Integer.parseInt(upcomingEventArray[j][0])){
@@ -131,6 +125,17 @@ public class UserControlClass {
                     resultUserEventList[j][4] = upcomingEventArray[j][4];
                     resultUserEventList[j][5] = upcomingEventArray[j][5];
                     resultUserEventList[j][6] = upcomingEventArray[j][6];
+                }
+
+                if(j<3 && recommendEventArray[j][0] != null &&
+                        userEventlist[i] == Integer.parseInt(recommendEventArray[j][0])){
+                    resultUserEventList[j][0] = recommendEventArray[j][0];
+                    resultUserEventList[j][1] = recommendEventArray[j][1];
+                    resultUserEventList[j][2] = recommendEventArray[j][2];
+                    resultUserEventList[j][3] = recommendEventArray[j][3];
+                    resultUserEventList[j][4] = recommendEventArray[j][4];
+                    resultUserEventList[j][5] = recommendEventArray[j][5];
+                    resultUserEventList[j][6] = recommendEventArray[j][6];
                 }
             }
         }
